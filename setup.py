@@ -32,7 +32,7 @@ except:
     from distutils.core import setup
 
 setup(name='wsgilog',
-      version='0.4',
+      version='0.4+jw.0.0',
       description='''WSGI logging and event reporting middleware.''',
       long_description='''Supports logging events in WSGI applications to
 STDOUT, time rotated log files, email, syslog, and web servers. Also
