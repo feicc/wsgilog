@@ -37,7 +37,8 @@ __all__ = ['WsgiLog', 'log']
 
 # File rotation constants
 BACKUPS = 1
-INTERVAL = 'h'
+INTERVAL = 1
+WHEN = 'h'
 # Default logger name (should be changed)
 LOGNAME = 'wsgilog.log'
 # Default 'environ' entries
@@ -122,10 +123,11 @@ class WsgiLog(object):
                 setlog(TimedRotatingFileHandler(
                     # Log file path
                     kw.get('file', LOGNAME),
+                    when=kw.get('when', WHEN),
                     # Interval to backup log file
-                    kw.get('interval', INTERVAL),
+                    interval=kw.get('interval', INTERVAL),
                     # Number of backups to keep
-                    kw.get('backups', BACKUPS)))
+                    backupCount=kw.get('backups', BACKUPS)))
             # Send log entries to an email address
             if 'toemail' in kw:
                 setlog(SMTPHandler(
