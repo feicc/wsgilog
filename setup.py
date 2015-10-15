@@ -31,8 +31,8 @@ try:
 except:
     from distutils.core import setup
 
-setup(name='wsgilog',
-      version='0.3+jw.0.0',
+setup(name='wsgilog-jw',
+      version='0.3',
       description='''WSGI logging and event reporting middleware.''',
       long_description='''Supports logging events in WSGI applications to
 STDOUT, time rotated log files, email, syslog, and web servers. Also
